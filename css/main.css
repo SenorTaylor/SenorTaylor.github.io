@@ -8,22 +8,30 @@ body {
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
+    margin: 0;
     list-style: none;
     font-weight: bold;
     color: #FFFFFF;
+    background-color: #dddddd;
 }
 nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
     color: #FFFFFF;
+    
 }
 a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
     color: #FFFFFF;
 }
 a:hover {
     text-decoration: underline;
     color: #FFFFFF;
+    background-color: #7FFF00;
 }
 h1 {
     font-size: 3em;
