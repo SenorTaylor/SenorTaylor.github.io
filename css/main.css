@@ -2,7 +2,7 @@ body {
     margin: 60px auto;
     width: 70%;
     background-color: #000000;
-    background-image: url(SenorTaylor.github.io/css/bgimage.jpg);
+    background-image: url(/css/bgimage.jpg);
     color: #FFFFFF;
 }
 nav ul, footer ul {
