@@ -67,3 +67,9 @@ ul.posts li {
     list-style: none;
     color: #FFFFFF;
 }
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
