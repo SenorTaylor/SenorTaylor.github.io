@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Animal Care Application</title>
+    <title>Transport Team Application</title>
 
 
     <!-- Bootstrap CSS -->    
@@ -72,7 +72,8 @@
            <a href="profile_settings_app.html"><img src="settings.png" class="img-responsive"></a>
        </li>
        <li id="exit">
-   <a href="log-in/login_1.html"><img src="exit.png" class="img-responsive"></a>
+       
+           <a href="log-in/login_1.html"><img src="exit.png" class="img-responsive"></a>
        </li>               
 
    </ul>
@@ -147,8 +148,6 @@
 
 
 
-
-
     <!-- Page Content -->
   
             
@@ -162,7 +161,7 @@
 
 
 <!-- Form Name -->
-<legend>Animal Care Application</legend>
+<legend>Transport and Rescue Application</legend>
 
 <!-- Text input-->
 <div class="form-group">
@@ -245,6 +244,8 @@
   </div>
 </div>
 
+
+
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="">Please list any allergies/or special needs.</label>  
@@ -255,75 +256,44 @@
 </div>
 
 
-<h4>Emergency Contact</h4>
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Full Name </label>  
-  <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Address</label>  
-  <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Phone Number</label>  
-  <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Relationship to participant</label>  
-  <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
-    
-  </div>
-</div>
-
-
-
 
 <h4>Additional Information</h4>
-
 <!-- Textarea -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textarea">Carnivorous patients are sometimes unable to eat food items whole due to their injuries; you may be required to cut and divide dead rodents, chicks, and fishes into smaller portions. Are you comfortable handling dead animals for this purpose? </label>
+  <label class="col-md-4 control-label" for="textarea">How far are you willing to travel for transport (i.e., 30-45 miles from your location, to a specific location, etc)? </label>
   <div class="col-md-4">                     
     <textarea class="form-control" id="textarea" name="textarea"></textarea>
   </div>
 </div>
 
-<!-- Textarea -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textarea">Prior to release from the Wildlife Center, many predatory birds are presented with live mice in order to evaluate their ability to capture prey in a controlled and measurable environment. What is your opinion on using live-prey for this purpose?</label>
-  <div class="col-md-4">                     
-    <textarea class="form-control" id="textarea" name="textarea"></textarea>
-  </div>
-</div>
+<!-- Multiple Checkboxes -->
 
-<!-- Textarea -->
+
+
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textarea">Wildlife rehabilitation requires daily outdoor work -- year-round and regardless of weather conditions. Are you able to work outside during all seasons? If not, what are your limitations? </label>
-  <div class="col-md-4">                     
-    <textarea class="form-control" id="textarea" name="textarea"></textarea>
-  </div>
-</div>
+  <label class="col-md-4 control-label" for="checkboxes">When are you able to transport animals?</label>
+  <div class="col-md-4">
+  <div class="controls ">
+                                     <div class="servicelog-categories">
+                                    <div class="category-select"><div><input id="org-81" type="checkbox" /> 
+                                    <label>Weekends</label>
+                                    </div>
+                                    <div class="category-select"><div><input id="org-81" type="checkbox" /> 
+                                     <label >Weekdays</label>
+                                       </div>
+                                     <div class="category-select"><div><input id="org-81" type="checkbox" /> 
+                                      <label >Anytime</label>
+                                      </div>
+                                    </div>  
+                                    </div>  
+                                    </div>  
+                                    </div>
+                                    </div> 
+                                    </div>
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Are you able to life 40 pounds on potentially uneven surfaces with minimal assistance?</label>
+  <label class="col-md-4 control-label" for="selectbasic">Have you had the pre-exposure rabies vaccination?</label>
   <div class="col-md-4">
     <select id="selectbasic" name="selectbasic" class="form-control">
       <option value="1">-Select-</option>
@@ -333,90 +303,46 @@
   </div>
 </div>
 
-<!-- Select Basic -->
+
+<!-- Multiple Checkboxes -->
+
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Are you vaccinated Rabies?</label>
+  <label class="col-md-4 control-label" for="checkboxes">With that in mind, would you be willing to assist with capturing animals, if needed?</label>
   <div class="col-md-4">
-    <select id="selectbasic" name="selectbasic" class="form-control">
-      <option value="1">-Select-</option>
-      <option value="2">Yes</option>
-      <option value="3">No</option>
-      <option value="4">N/A</option>
-    </select>
-  </div>
-</div>
+  <div class="controls ">
+                                     <div class="servicelog-categories">
+                                    <div class="category-select"><div><input id="org-81" type="checkbox" /> 
+                                    <label> Yes, I am willing to help capture animals.</label>
+                                    </div>
+                                    <div class="category-select"><div><input id="org-81" type="checkbox" /> 
+                                     <label > No, I'd prefer to strictly transport.</label>
+                                       </div>
+                                     <div class="category-select"><div><input id="org-81" type="checkbox" /> 
+                                      <label >Anytime</label>
+                                      </div>
+                                    </div>  
+                                    </div>  
+                                    </div>  
+                                    </div>
+                                    </div> 
+                                    </div>
 
-<!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">If not, are you willing to become vaccinated at your own cost?</label>
-  <div class="col-md-4">
-    <select id="selectbasic" name="selectbasic" class="form-control">
-      <option value="1">-Select-</option>
-      <option value="2">Yes</option>
-      <option value="3">No</option>
-    </select>
-  </div>
-</div>
 
-<!-- Textarea -->
+<!-- Multiple Checkboxes -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textarea">Do you belong to any animal rights groups (PETA, The Humane Society, etc.)? If so, which ones? </label>
-  <div class="col-md-4">                     
-    <textarea class="form-control" id="textarea" name="textarea"></textarea>
-  </div>
-</div>
-
-<!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Will you be able to commit to either a six-month or one-year schedule, with at least one shift (four hours) per week?</label>
-  <div class="col-md-4">
-    <select id="selectbasic" name="selectbasic" class="form-control">
-      <option value="1">-Select-</option>
-      <option value="2">Yes</option>
-      <option value="3">No</option>
-    </select>
-  </div>
-</div>
-
-<!-- Textarea -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textarea">Please Describe an environmental or wildlife-based issue you feel passionately about, and why.</label>
-  <div class="col-md-4">                     
-    <textarea class="form-control" id="textarea" name="textarea"></textarea>
-  </div>
-</div>
-
-<!-- Textarea -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textarea">What do you hope to accomplish by volunteering at the Wildlife Center of Virginia?</label>
-  <div class="col-md-4">                     
-    <textarea class="form-control" id="textarea" name="textarea"></textarea>
-  </div>
-</div>
-
-<!-- Textarea -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textarea">Is there anything else that you'd life us to know about yourself or your experience?</label>
-  <div class="col-md-4">                     
-    <textarea class="form-control" id="textarea" name="textarea"></textarea>
-  </div>
-</div>
-
-<!-- File Button --> 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="filebutton">Resume or CV: This should include information about your education and relevant work history.</label>
-  <div class="col-md-4">
-    <input id="filebutton" name="filebutton" class="input-file" type="file">
-  </div>
-</div>
-
-<!-- File Button --> 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="filebutton">Letter of Recommendation: The letter should come directly from your refrence.</label>
-  <div class="col-md-4">
-    <input id="filebutton" name="filebutton" class="input-file" type="file">
-  </div>
-</div>
+  <label class="col-md-4 control-label" for="checkboxes">Transporter Guidelines</label>
+  <div class="col-md-5">
+  <div class="controls ">
+                                     <div class="servicelog-categories">
+                                    <div class="category-select"><div><input id="org-81" type="checkbox" /> 
+                                    <label>  I am acknowledging that I have read the transporter guidelines and I promise to abide by these guidelines when I transport for the Wildlife Center of Virginia.</label>
+                                    </div>
+                                   </div>  
+                                    </div>  
+                                    </div>  
+                                    </div>
+                                    </div> 
+                                    </div>
 
 </fieldset>
 </form>
@@ -426,6 +352,8 @@
 <div id="submitbutton" class="col-sm-10 col-sm-offset-4">
             <a class="btn btn-large btn-info" href="thankyou.html">Submit Application</a>
             </div>
+
+
 
 
 
