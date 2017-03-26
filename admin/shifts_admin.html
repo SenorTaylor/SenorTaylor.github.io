@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Home</title>
+    <title>Shifts</title>
 
 
     <!-- Bootstrap CSS -->    
@@ -61,19 +61,18 @@
 </head>
 
 <body>
-<body>
 
 <div id="header">
    <ul class="con">
     <div id="header2">
-        <li> <img src="img/profile-widget-avatar.jpg" height=30px width=30px>
-           <a href="profile.html">Jennifer Alba </a>
+        <li> 
+           <a href="profile.html">Jennifer Alba<img src="img/profile-widget-avatar.jpg" height=30px width=30px></a>
          </li>
-           <li id="settings"><img src="settings.png" class="img-responsive">
-           <a href="profile_settings.html"></a>
+           <li id="settings">
+           <a href="profile_settings.html"><img src="settings.png" class="img-responsive"></a>
        </li>
-       <li id="exit"> <img src="exit.png" class="img-responsive">
-           <a href="logout.html"></a>
+       <li id="exit">
+  <a href="log-in/login_1.html"><img src="exit.png" class="img-responsive"></a>
        </li>               
 
    </ul>
@@ -90,6 +89,7 @@
        <div class="tile" id="hello">
         <div class="col-sm-12">
          <h2><span>Hi,</span> Jennifer</h2>
+          <p>You last visited <strong>two hours</strong> ago</p>
        </div>
    </div>
    <div>
@@ -145,7 +145,6 @@
 </div>
 
 
-
           
 
 <!-- Select Multiple -->
@@ -164,7 +163,7 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Event Type</label>  
+  <label id="textinputshift" class="col-md-4 control-label" for="textinput">Shift Type</label>  
   <div class="col-md-4">
   <input id="textinputshift" name="textinput" type="text" placeholder="" class="form-control input-md">
     
@@ -173,7 +172,7 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Event Date</label>  
+  <label id="textinputshift" class="col-md-4 control-label" for="textinput">Shift Date</label>  
   <div class="col-md-4">
   <input id="textinputshift" name="textinput" type="text" placeholder="" class="form-control input-md">
     
@@ -183,20 +182,20 @@
 
 <!-- Multiple Checkboxes -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="checkboxes">Event Time</label>
+  <label id="textinputshift" class="col-md-4 control-label" for="checkboxes">Shift Time</label>
   <div class="col-md-4">
   
 <div id="textinputshift" class="form-group">
                                     <div class="controls ">
                                      <div class="servicelog-categories">
                                     <div class="category-select"><div><input id="org-81" type="checkbox" /> 
-                                    <label>Event 1</label>
+                                    <label>Shift A</label>
                                     </div>
                                     <div class="category-select"><div><input id="org-81" type="checkbox" /> 
-                                     <label >Event 2</label>
+                                     <label >Shift B</label>
                                        </div>
                                      <div class="category-select"><div><input id="org-81" type="checkbox" /> 
-                                      <label >Event 3</label>
+                                      <label >Shift C</label>
                                       </div>
                                     </div>  
                                     </div>  
@@ -206,24 +205,20 @@
 
 
 <!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="singlebutton"></label>
-  <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" class="btn btn-info">Create Event</button>
-  </div>
-</div>
+<div id="shiftbutton" class="col-sm-10 col-sm-offset-2">
+            <a class="btn btn-large btn-info" href="shifts_admin.html">Create Shift</a>
+            </div></div>
+ </form>
 
-</fieldset>
-</form>
+                                    </div>  
+                                    </div>  
+                                    </div>  
+                                    </div>  
+                                  </div>
 
-          </div>
-        </div>
-      </div>
-        </div>  
-      <div>
-      
-      </div>  
-      </fieldset>
+
+
+
 
           </div>
       </div>
@@ -239,6 +234,10 @@
      
       </div>
   </div>
+
+
+
+
 </body>
 </html>
 
