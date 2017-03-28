@@ -55,6 +55,8 @@
 			                        	<label class="sr-only" for="form-password">Password</label>
 			                        	<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
 			                        </div>
+						
+						 <!-- CIS PEOPLE WILL FIGURE OUT WHAT THE HREF LINK WILL BE -->
 			                        <a id="signin" class="btn" href="index.html">Sign in!</a>
 
                                     <a id="createaccount" class="btn" href="login_3.php">Not a member? Create account here!</a>
