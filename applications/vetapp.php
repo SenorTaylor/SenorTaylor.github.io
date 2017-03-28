@@ -1,3 +1,72 @@
+<!-- PHP Functionality -->
+<?php
+
+	$servername = 'localhost';
+	$username = 'root';
+	$password = 'JohnGuo16';
+	$database = 'project';
+	
+	// Create connection
+	$conn = new mysqli($servername,$username,$password,$database);
+	
+	// Check connection
+	if (!$conn) 
+	{
+		echo 'Not Connected to DB';
+	}
+	
+	if (isset($_POST['account']))
+	{
+		
+		// Applicant info
+		$fname = $_POST['fnamedbox'];
+		$address = $_POST['addressbox'];
+		$city = $_POST['citybox'];
+		$state = $_POST['statebox'];
+		$zip = $_POST['zipbox'];
+		$phone = $_POST['phonebox'];
+		$email = $_POST['emailbox'];
+		
+		// Format the date to be compatible with MySQL
+		$dob = $_POST['dobbox'];
+		$dobfmt = DateTime::createFromFormat('m/d/Y', $dob);
+		$dobfmtfinal = $dobfmt->format('Y-m-d');
+		
+		$avail = $_POST['avbox'];
+		$allergies = $_POST['allbox'];
+		
+		// Applicant emergency contact info
+		$fnameEC = $_POST['ecfnamebox'];
+		$addressEC = $_POST['ecaddressbox'];
+		$phoneEC = $_POST['ecphonebox'];
+		$relEC = $_POST['ecrelbox'];
+		$policy = $_POST['policy'];
+		
+		// Additional Information
+		$medtraining = $_POST['medtrainingbox'];
+		$env = $_POST['envbox'];
+		$dirty = $_POST['dirtybox'];
+		
+								
+		// Create query
+		$sql = "INSERT INTO Application VALUES (:fname, :address, :city, :state, :zip,
+												:phone, :email, :dobfmtfinal, :avail,
+												:allergies, :fnameEC, :addressEC, :phoneEC,
+												:relEC, :policy, :medtraining, :env, :dirty)";
+												
+		$stmt = $conn->prepare($sql);
+		
+		
+		$stmt->bind_param("ssssiissbssisbsss", $fname, $address, $city, $state, $zip,
+												$phone, $email, $dobfmtfinal, $avail,
+												$allergies, $fnameEC, $addressEC, $phoneEC,
+												$relEC, $policy, $medtraining, $env, $dirty);
+		$stmt->execute();						 
+				
+	}				
+									
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -164,7 +233,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="Full Name">Full Name</label>  
   <div class="col-md-4">
-  <input id="Full Name" name="Full Name" type="text" placeholder="" class="form-control input-md" required>
+  <input id="Full Name" name="fnamebox" pattern="^[a-zA-Z ]+$" title="(Letters only!)" type="text" placeholder="" class="form-control input-md" required>
+  
     
   </div>
 </div>
@@ -173,7 +243,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Address</label>  
   <div class="col-md-4">
-  <input id="Address" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="Address" name="addressbox" type="text" placeholder="" class="form-control input-md" required>
     
   </div>
 </div>
@@ -182,7 +252,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="City">City</label>  
   <div class="col-md-4">
-  <input id="City" name="City" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="City" name="citybox" pattern="^[a-zA-Z ]+$" title="(Letters only!)" type="text" placeholder="" class="form-control input-md" required>
     
   </div>
 </div>
@@ -191,7 +261,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">State</label>  
   <div class="col-md-4">
-  <input id="State" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="State" name="statebox" pattern="^[a-zA-Z ]+$" title="(Letters only!)" type="text" placeholder="" class="form-control input-md" required="">
     
   </div>
 </div>
@@ -200,7 +270,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Zipcode</label>  
   <div class="col-md-4">
-  <input id="Zipcode" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="Zipcode" name="zipbox" type="number" placeholder="" class="form-control input-md" required="">
     
   </div>
 </div>
@@ -209,7 +279,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Phone Number</label>  
   <div class="col-md-4">
-  <input id="Phone" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="Phone" name="phonebox" type="number" placeholder="" class="form-control input-md" required>
     
   </div>
 </div>
@@ -218,25 +288,25 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Email</label>  
   <div class="col-md-4">
-  <input id="Email" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="Email" name="emailbox" type="email" placeholder="Please enter a valid email address" class="form-control input-md" required>
     
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Date of Birth</label>  
+  <label class="col-md-4 control-label" for="textinput">Date of Birth (ex: MM/DD/YYYY)</label>  
   <div class="col-md-4">
-  <input id="DateBirth" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="DateBirth" name="dobbox" type="date" pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="" class="form-control input-md" required>
     
   </div>
 </div>
 
-<!-- Text input-->
+<!-- This needs to be changed to a different way of entering data -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Availability (Mon-Fri)</label>  
   <div class="col-md-4">
-  <input id="Availability" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="Availability" name="avbox" type="text" placeholder="" class="form-control input-md" required>
     
   </div>
 </div>
@@ -245,7 +315,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="">Please list any allergies/or special needs.</label>  
   <div class="col-md-4">
-  <input id="allergies" name="" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="allergies" name="allbox" type="text" placeholder="" class="form-control input-md" required>
     
   </div>
 </div>
@@ -254,7 +324,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Full Name </label>  
   <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="ecfname" name="ecfnamebox" pattern="^[a-zA-Z ]+$" title="(Letters only!)" type="text" placeholder="" class="form-control input-md" required>
     
   </div>
 </div>
@@ -263,7 +333,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Address</label>  
   <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="ecaddress" name="ecaddressbox" type="text" placeholder="" class="form-control input-md" required>
     
   </div>
 </div>
@@ -272,7 +342,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Phone Number</label>  
   <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="ecphone" name="ecphonebox" type="text" placeholder="" class="form-control input-md" required>
     
   </div>
 </div>
@@ -281,7 +351,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Relationship to participant</label>  
   <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="ecrel" name="ecrelbox" pattern="^[a-zA-Z ]+$" title="(Letters only!)" type="text" placeholder="" class="form-control input-md" required>
     
   </div>
 </div>
@@ -291,7 +361,7 @@
   <label class="col-md-4 control-label" for="checkboxes">Agree to Our Policy</label>
   <div class="col-md-4">
     <label class="checkbox-inline" for="checkboxes-0">
-      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+      <input type="checkbox" name="policy" id="checkboxes-0" value="1">
       *
     </label>
   </div>
@@ -309,7 +379,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="">Please describe any previous medical or veterinary training you have completed.</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="" name=""></textarea>
+    <textarea class="form-control" id="medtrainingbox" name="medtrainingbox"></textarea>
   </div>
 </div>
 
@@ -317,7 +387,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="">The case load at the Center can be unpredictable and vary greatly depending on the time of year.  Please describe the work environment that you work best in including how you best retain information that is taught to you.</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="" name=""></textarea>
+    <textarea class="form-control" id="envbox" name="envbox" ></textarea>
   </div>
 </div>
 
@@ -325,7 +395,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="">Taking care of animals is a messy job that requires all team members to clean out dirty crates, chop rats or mice for feeding to patients, and collect fecal samples for analysis for example.  Is this something that you foresee struggling with?</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="" name=""></textarea>
+    <textarea class="form-control" id="dirtybox" name="dirtybox" ></textarea>
   </div>
 </div>
 
