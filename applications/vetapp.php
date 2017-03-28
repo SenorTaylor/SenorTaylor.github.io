@@ -66,7 +66,9 @@
 	}				
 									
 ?>
+<!-- PHP ENDS HERE -->
 
+<!-- HTML STARTS HERE -->
 <!DOCTYPE html>
 <html lang="en">
 
