@@ -140,10 +140,10 @@
            <a href="profile_app.html"><img src="img/profile-widget-avatar.jpg" height=30px width=30px> Jennifer Alba </a>
          </li>
            <li id="settings">
-           <a href="profile_settings_app.html"><img src="img/settings.png" class="img-responsive"></a>
+           <a href="profile_settings_app.html"><img src="settings.png" class="img-responsive"></a>
        </li>
        <li id="exit">
-           <a href="log-in/login_2.php"><img src="img/exit.png" class="img-responsive"></a>
+           <a href="log-in/login_2.php"><img src="exit.png" class="img-responsive"></a>
        </li>               
 
    </ul>
